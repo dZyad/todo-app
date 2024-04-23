@@ -17,7 +17,8 @@ body {
 }
 
 .active {
-    color: red;
+    color: whitesmoke;
+    background-color: blueviolet;
 }
 
 button {
@@ -25,3 +26,23 @@ button {
     border: 0;
 }
 
+.delete-project {
+    height: 1rem;
+}
+
+::backdrop {
+    background-image: linear-gradient(
+      45deg,
+      grey,
+    );
+    opacity: 0.75;
+}
+
+#newProjectForm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    padding: 3rem;
+}

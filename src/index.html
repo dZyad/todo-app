@@ -7,12 +7,26 @@
 </head>
 <body>
     <div class="sidebar">
-        <button id="add-project">Add project</button>
         <h3>Projects</h3>
         <div id="project-sidebar">
         </div>
+        <button id="add-project">Add project</button>
     </div>
     <div class="content">
-    </div>    
+    </div>
+    <div id="newProjectForm">
+        <form action="">
+            <div>
+                <label for="newProjectName">Project name:</label>
+                <input type="text" id="newProjectName" placeholder="Name of Project/Task">
+                <label for="newProjectDescription">Description:</label>
+                <input type="text" id="newProjectDescription">
+            </div>
+            <div>
+                <button value="addProjectCancel" formmethod="dialog">Discard</button>
+                <button id="addProjectConfirm" value="default" type="submit">Add Project</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

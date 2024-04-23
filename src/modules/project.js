@@ -1,4 +1,5 @@
 import { projectList } from "..";
+import { projectsController } from "./controller";
 
 const createProject = (name, description) => {
     _disableProjects();
@@ -28,4 +29,22 @@ function activeProject() {
     return projectList.find(project => project.active);
 }
 
-export { createProject, activeProject, createTodo };
+function switchActiveProject(index) {
+    _disableProjects();
+    projectList[index].active = true;
+    projectsController();
+}
+
+function deleteProject(index) {
+    if ( projectList.length > 1 ) {
+        if ( projectList[index] === activeProject()) {
+            projectList.splice(index, 1);
+            projectList[0].active = true;
+        } else {
+            projectList.splice(index, 1);
+        }
+    }
+    projectsController();
+}
+
+export { createProject, activeProject, createTodo, deleteProject, switchActiveProject };
