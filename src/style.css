@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    background-color: aqua;
+}
+
+.active {
+    color: red;
+}
+
+button {
+    background-color: inherit;
+    border: 0;
+}
+

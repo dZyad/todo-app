@@ -1,28 +1,31 @@
 import { projectList } from "..";
-import { createTodo } from "./todo";
 
 const createProject = (name, description) => {
     _disableProjects();
-    const newProject = {
-        name: name,
-        description: description,
+    projectList.push({
+        name,
+        description,
         todos: [],
         active: true,
-        addTodo(todo) {
-            this.todos.push(todo);
-        }
-    };
-    projectList.push(newProject);
+    });
 }
 
-const _disableProjects = () => {
+const createTodo = (name, dueDate) => {
+    activeProject().todos.push({
+        name,
+        dueDate,
+        complete: false
+    });
+}
+
+function _disableProjects() {
     for (const project of projectList) {
         project.active = false;
     }
 }
 
-const activeProject = () => {
+function activeProject() {
     return projectList.find(project => project.active);
 }
 
-export { createProject, activeProject };
+export { createProject, activeProject, createTodo };

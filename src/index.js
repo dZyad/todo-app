@@ -1,6 +1,12 @@
-import { createTodo } from "./modules/todo";
-import { createProject, activeProject } from "./modules/project";
+import './style.css';
+import { renderCurrentProject, renderProjects } from './modules/render';
+import { initializeProjects } from './modules/loader';
 
 let projectList = [];
-console.log('2')
-export {projectList};
+
+initializeProjects();
+
+renderProjects();
+renderCurrentProject();
+
+export { projectList };
